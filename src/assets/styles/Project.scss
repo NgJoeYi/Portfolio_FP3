@@ -1,49 +1,82 @@
+/* Base container styling */
 .projects-container {
     display: flex;
     flex-direction: column;
     padding: 5% 10%;
     text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
 }
-  
+
+/* Light Mode Styling */
+.light-mode {
+    background-color: #f9f9f9;  /* Light background */
+    color: #000;                /* Dark text */
+}
+
+.light-mode .project-container {
+    background-color: #fff;     /* White background for project cards */
+    border: 1px solid #ddd;     /* Light border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Dark Mode Styling */
+.dark-mode {
+    background-color: #121212;  /* Dark background */
+    color: #e0e0e0;             /* Light text */
+}
+
+.dark-mode .project-container {
+    background-color: #1e1e1e;  /* Darker background for project cards */
+    border: 1px solid #333;     /* Darker border */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle light shadow */
+}
+
+/* Hover Effects */
+.projects-container .project-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .project-container:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Light shadow on hover for dark mode */
+}
+
+/* Grid styling */
 .projects-container .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
 }
-  
-.projects-container .projects-grid .project {
-    text-align: left;
-}
-  
+
+/* Project title hover effect */
 .project h2:hover {
     text-decoration: underline;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
-  
+
+/* Zoom effect for images */
 .zoom {
     border-radius: 5px;
-    transition: transform .2s;
+    transition: transform 0.2s;
     margin: 0 auto;
 }
-  
+
 .zoom:hover {
     transform: scale(1.05);
 }
 
-@media screen {
-    @media (max-width: 700px) {
-        .projects-container {
-            display: block;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-  
-        .projects-container .projects-grid {
-            display: block;
-        }
-      
-        .projects-container .projects-grid .project {
-            padding-bottom: 5%;
-        }
+/* Responsive adjustments */
+@media screen and (max-width: 700px) {
+    .projects-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .projects-container .projects-grid {
+        display: block;
+    }
+
+    .projects-container .projects-grid .project-container {
+        margin-bottom: 20px;
     }
 }

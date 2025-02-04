@@ -51,9 +51,16 @@
 
 .about-section .image-wrapper {
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
-        width: 150px;
-        border-radius: 50%;
+        width: 200px;
+        height: 200px;          // Add height equal to width
+        border-radius: 50%;     // Ensures the image is circular
+        object-fit: cover;      // Makes sure the image covers the area evenly
+        border: 4px solid white; // Optional: Adds a border for a cleaner look
     }
 }
 

@@ -1,0 +1,90 @@
+.contact_wrapper svg {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.contact-form {
+  padding-top: 20px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #050f0b;
+  }
+
+  button:hover {
+    background-color: #5000ca;
+    color: white;
+  }
+
+  fieldset {
+    background-color: white;
+  }
+}
+
+label {
+  font-size: 1.2rem;
+  font-family: Arial, sans-serif; /* Fallback to a default font to ensure visibility */
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+/* Ensure input text and background are clearly visible */
+.contact-form .MuiInputBase-input {
+  color: #000 !important;  /* Black text */
+  background-color: #fff !important;  /* White background */
+  padding: 10px !important;  /* Ensure text isn't hidden by padding */
+  font-family: Arial, sans-serif !important; /* Use a common font for reliability */
+  opacity: 1 !important;  /* Force text visibility */
+}
+
+.contact-form .MuiInputLabel-root {
+  color: #000 !important;  /* Ensure label text is black */
+  font-family: Arial, sans-serif !important;
+}
+
+.contact-form .MuiOutlinedInput-root fieldset {
+  border-color: #ccc !important;  /* Light grey border */
+}
+
+.contact-form .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #5000ca !important;  /* Highlighted border on focus */
+}
+
+.contact-form .MuiInputBase-input::placeholder {
+  color: #888 !important;  /* Grey placeholder text */
+  opacity: 1 !important;  /* Ensure placeholder text is visible */
+}
+
+/* Debug Borders (you can remove these after testing) */
+.contact-form .MuiFormControl-root {
+  border: 1px solid red !important;  /* Show form control boundaries */
+}
+
+.contact-form .MuiInputBase-input {
+  border: 1px solid blue !important;  /* Show input field boundaries */
+}
+
+/* Ensure no visibility issues */
+.contact-form input.MuiInputBase-input,
+.contact-form textarea.MuiInputBase-input {
+  visibility: visible !important;
+}

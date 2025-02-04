@@ -1,0 +1,139 @@
+.skills-container {
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    svg {
+        color: white;
+    }
+}
+  
+.skills-container .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+  
+.skills-container .skills-grid .skill {
+    align-items: center;
+    text-align: left;
+}
+
+/* New Container Styling */
+.expertise-container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+  
+.chip {
+    font-size: 0.8rem !important;
+    height: 25px !important;
+  
+    span {
+        font-family: 'Courier Prime', monospace;
+    }
+  
+    svg {
+        height: 15px !important;
+    }
+}
+
+.flex-chips {
+    line-height: 2;
+    margin: 0.5;
+
+    .chip-title {
+        color: white;
+        padding-right: 10px;
+    }
+}
+
+.flex-chips .MuiChip-root {
+    margin-right: 0.5em;
+}
+
+.flex-chips .MuiChip-outlined {
+    background-color: #e0e0e0;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+.flex-chips .MuiChip-outlined span {
+    color: rgb(39, 40, 34);
+}
+
+@media screen {
+    @media (max-width: 768px) {
+        .skills-container {
+            display: block;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    
+        .skills-container .skills-grid {
+            display: initial;
+        }
+        
+        .skills-container .skills-grid .skill {
+            padding-bottom: 5%;
+        }
+
+        .expertise-container {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 567px) {
+        .skills {
+            font-size: 12px;
+        }
+    }
+}
+
+/* Expertise Section Dark Mode */
+.dark-mode .expertise-container {
+    background-color: rgba(30, 30, 30, 0.9);  /* Dark container background */
+    color: white;                             /* Text color in dark mode */
+}
+
+.dark-mode .chip,
+.dark-mode .MuiChip-root {
+    background-color: #333333 !important;     /* Dark chip background */
+    color: white !important;                  /* Chip text color */
+}
+
+.dark-mode .MuiChip-label {
+    color: white !important;                  /* Chip label text color */
+}
+
+.dark-mode .chip-title {
+    color: white !important;                  /* Tech stack title color */
+}
+
+/* Expertise Section Light Mode */
+.light-mode .expertise-container {
+    background-color: rgba(240, 240, 240, 0.9);  /* Light container background */
+    color: black;                                /* Text color in light mode */
+}
+
+.light-mode .chip,
+.light-mode .MuiChip-root {
+    background-color: #e0e0e0 !important;        /* Light chip background */
+    color: black !important;                     /* Chip text color */
+}
+
+.light-mode .MuiChip-label {
+    color: black !important;                     /* Chip label text color */
+}
+
+.light-mode .chip-title {
+    color: black !important;                     /* Tech stack title color */
+}

@@ -37,7 +37,7 @@ const technologies = [
     { name: "Linux", icon: faCogs },
     { name: "Visual Studio Code", icon: faCode }
 ];
- 
+  
 function Technologies() {
     return (
         <div className="container" id="technologies">

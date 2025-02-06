@@ -19,7 +19,7 @@ function Main() {
           <h1>Ng Joe Yi</h1>
           <p>Aspiring Software Engineer</p>
 
-          <a href="/resume.pdf" download="NgJoeYi_Resume.pdf" className="download-btn">
+          <a href="/media/resume.pdf" download="NgJoeYi_Resume.pdf" className="download-btn">
             Download Resume
           </a>
 

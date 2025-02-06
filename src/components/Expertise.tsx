@@ -35,7 +35,7 @@ const technologies = [
     { name: "Speech-to-Text", icon: faCloud },
     { name: "Power Automate", icon: faCog },
     { name: "Linux", icon: faCogs },
-    { name: "GitHub Actions", icon: faGitAlt }
+    { name: "Visual Studio Code", icon: faGitAlt }
 ];
 
 function Technologies() {

@@ -36,7 +36,7 @@ const technologies = [
     { name: "Power Automate", icon: faCog },
     { name: "Linux", icon: faCogs },
     { name: "Visual Studio Code", icon: faCode }
-];
+]; 
   
 function Technologies() {
     return (

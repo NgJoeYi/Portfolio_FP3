@@ -15,34 +15,34 @@ function Contact() {
 
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  
+    setNameError(name.trim() === '');
+    setEmailError(email.trim() === '');
+    setMessageError(message.trim() === '');
+  
+    if (!name || !email || !message) {
+      alert('Please fill out all required fields.');
+      return;
+    }
 
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
-
-    if (name && email && message) {
-      const templateParams = {
-        name,
-        email,
-        message,
-      };
-
-      emailjs.send('service_vk3n05u', 'template_ghuajsf', templateParams, 'lqbk60UFd1119KilR')
+    if (form.current) {
+      emailjs.sendForm('service_vk3n05u', 'template_ghuajsf', form.current, 'RhnjMHYUy2Cc077Dq')
         .then((response) => {
           console.log('SUCCESS!', response.status, response.text);
-          alert('Your message has been sent!');
+          alert('Your message has been sent successfully!');
           setName('');
           setEmail('');
           setMessage('');
+          form.current?.reset(); // Reset form fields
         })
         .catch((error) => {
-          console.log('FAILED...', error);
-          alert('Failed to send message. Please try again later.');
+          console.error('FAILED...', error);
+          alert('Failed to send the message. Please check your email address and try again.');
         });
     }
-  };
+  };  
 
   return (
     <div style={{ backgroundColor: '#000', minHeight: '100vh', padding: '40px', color: '#fff' }}>
@@ -63,6 +63,7 @@ function Contact() {
               fullWidth
               label="Your Name"
               placeholder="What's your name?"
+              name="from_name"  // Matches EmailJS template variable
               value={name}
               onChange={(e) => setName(e.target.value)}
               error={nameError}
@@ -79,6 +80,7 @@ function Contact() {
               fullWidth
               label="Email / Phone"
               placeholder="How can I reach you?"
+              name="from_email" // Matches EmailJS template variable
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               error={emailError}
@@ -98,6 +100,7 @@ function Contact() {
             placeholder="Send me any inquiries or questions"
             multiline
             rows={6}
+            name="message" // Matches EmailJS template variable
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             error={messageError}

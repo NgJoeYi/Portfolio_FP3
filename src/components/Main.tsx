@@ -19,6 +19,10 @@ function Main() {
           <h1>Ng Joe Yi</h1>
           <p>Aspiring Software Engineer</p>
 
+          <a href="/resume.pdf" download="NgJoeYi_Resume.pdf" className="download-btn">
+            Download Resume
+          </a>
+
           <div className="mobile_social_icons">
             <a href="https://github.com/yujisatojr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/yujisato/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>

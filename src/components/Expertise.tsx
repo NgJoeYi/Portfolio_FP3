@@ -1,21 +1,41 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faTools, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faTools, faDatabase, faMobileAlt, faCloud, faCog, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faNode, faJava, faJsSquare, faPython, faAndroid, faGitAlt } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const languages = [
-    "JavaScript", "TypeScript", "Java", "C++", "C#", "Python", "SQL", "HTML5", "CSS3", "SASS"
+    { name: "JavaScript", icon: faJsSquare },
+    { name: "TypeScript", icon: faCode },
+    { name: "Java", icon: faJava },
+    { name: "C++", icon: faCode },
+    { name: "C#", icon: faCode },
+    { name: "Python", icon: faPython },
+    { name: "SQL", icon: faDatabase },
+    { name: "HTML5", icon: faCode },
+    { name: "CSS3", icon: faCode },
+    { name: "SASS", icon: faCode }
 ];
 
 const frameworksTools = [
-    "React", "Node.js", "Flask", "PostgreSQL", "Firebase", "Postman", "Git", "Docker", "AWS", "Google Cloud"
+    { name: "React", icon: faReact },
+    { name: "Node.js", icon: faNode },
+    { name: "PostgreSQL", icon: faDatabase },
+    { name: "Firebase", icon: faCloud },
+    { name: "Postman", icon: faTools },
+    { name: "Git", icon: faGitAlt }
 ];
 
 const technologies = [
-    "Android Studio", "Firebase ML", "Google Cloud Translation API", "Speech-to-Text", 
-    "Pandas", "Power Automate", "Linux", "GitHub Actions"
+    { name: "Android Studio", icon: faAndroid },
+    { name: "Firebase ML", icon: faCloud },
+    { name: "Google Cloud Translation API", icon: faCloud },
+    { name: "Speech-to-Text", icon: faCloud },
+    { name: "Power Automate", icon: faCog },
+    { name: "Linux", icon: faCogs },
+    { name: "GitHub Actions", icon: faGitAlt }
 ];
 
 function Technologies() {
@@ -32,8 +52,8 @@ function Technologies() {
                             <h3>Programming Languages</h3>
                             <p>Proficient in a range of programming languages, from frontend development to backend logic and data management.</p>
                             <div className="flex-chips">
-                                {languages.map((label, index) => (
-                                    <Chip key={index} className='chip' label={label} />
+                                {languages.map((item, index) => (
+                                    <Chip key={index} icon={<FontAwesomeIcon icon={item.icon} />} className='chip' label={item.name} />
                                 ))}
                             </div>
                         </div>
@@ -46,8 +66,8 @@ function Technologies() {
                             <h3>Frameworks & Tools</h3>
                             <p>Experienced with modern frameworks and development tools that streamline the software development lifecycle.</p>
                             <div className="flex-chips">
-                                {frameworksTools.map((label, index) => (
-                                    <Chip key={index} className='chip' label={label} />
+                                {frameworksTools.map((item, index) => (
+                                    <Chip key={index} icon={<FontAwesomeIcon icon={item.icon} />} className='chip' label={item.name} />
                                 ))}
                             </div>
                         </div>
@@ -60,8 +80,8 @@ function Technologies() {
                             <h3>Technologies & Platforms</h3>
                             <p>Familiar with a variety of platforms and technologies, including cloud services, mobile development, and automation tools.</p>
                             <div className="flex-chips">
-                                {technologies.map((label, index) => (
-                                    <Chip key={index} className='chip' label={label} />
+                                {technologies.map((item, index) => (
+                                    <Chip key={index} icon={<FontAwesomeIcon icon={item.icon} />} className='chip' label={item.name} />
                                 ))}
                             </div>
                         </div>

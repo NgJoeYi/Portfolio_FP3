@@ -48,6 +48,11 @@
     grid-gap: 50px;
 }
 
+/* Project container padding */
+.project-container {
+    padding: 20px;  /* Added padding for content inside each container */
+}
+
 /* Project title hover effect */
 .project h2:hover {
     text-decoration: underline;
@@ -79,4 +84,19 @@
     .projects-container .projects-grid .project-container {
         margin-bottom: 20px;
     }
+}
+
+/* Image Styling for Uniform Sizes */
+.project img {
+    width: 100%;             /* Ensure the image takes up the full width of its container */
+    height: 200px;           /* Set a fixed height */
+    object-fit: cover;       /* Crop the image to fit without stretching */
+    border-radius: 5px;      /* Maintain the existing border radius */
+    transition: transform 0.2s;
+    margin: 0 auto;
+}
+
+/* Zoom effect on hover */
+.zoom:hover {
+    transform: scale(1.05);
 }

@@ -160,3 +160,35 @@
         }
     }
 }
+
+
+// Default (Light Mode)
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #b9b9b9; /* Purple shade */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+// Hover effect in Light Mode
+.download-btn:hover {
+    background-color: #4b0082; /* Darker purple */
+}
+
+// Dark Mode Styling
+.dark-mode .download-btn {
+    background-color: #8a2be2; /* Lighter purple for dark mode */
+    color: #ffffff;
+}
+
+// Hover effect in Dark Mode
+.dark-mode .download-btn:hover {
+    background-color: #5a189a; /* Darker shade of purple */
+}
